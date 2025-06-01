@@ -1,0 +1,150 @@
+:root {
+  --Neutral900: #09153e;
+  --Neutral800: #1a1c24;
+  --Neutral700: #1c1f27;
+  --Neutral600: #3a3d47;
+  --Neutral300: #c4c4c4;
+  --Neutral200: #e1e1e1;
+  --Neutral100: #f0f0f0;
+  --Neutral0: #ffffff;
+
+  --Red-400: #f25c54;
+  --Red-500: #f25c54;
+  --Red-700: #f25c54;
+
+  --Light-Gadient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --Dark-Gadient: linear-gradient(180deg, #040918 100%, #09153e 0%);
+}
+
+/* Swich button*/
+.switch {
+  --secondary-container: var(--Red-400);
+  --primary: var(--Neutral600);
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.7em;
+  height: 1.8em;
+}
+
+.switch input {
+  display: none;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--Neutral600);
+  transition: 0.2s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 20px;
+  left: 0.2em;
+  bottom: 0.2em;
+  background-color: #fff;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--secondary-container);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--secondary-container);
+}
+
+input:checked + .slider:before {
+  transform: translateX(1.9em);
+}
+
+.extention {
+  transition: all 0.3s ease-in-out;
+  border: 0.5px solid var(--Neutral300);
+}
+.extention:hover {
+  background-color: var(--Neutral700) !important;
+  transform: scale(1.3);
+}
+
+body {
+  height: 100vh;
+}
+div#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  font-size: 25px;
+}
+/* classes add for many elemnts*/
+.white-border {
+  border: 1px solid var(--Neutral600);
+}
+.active {
+  border: 2px solid var(--Red-500);
+  background-color: var(--Red-500);
+  color: var(--Neutral900);
+}
+.bg-orange {
+  background-color: var(--Red-500);
+}
+.orange-focus:focus {
+  border: 2px solid var(--Red-500);
+}
+.filter-button {
+  width: auto;
+}
+.white-text {
+  color: var(--Neutral100);
+}
+
+.remove-button:hover,
+.remove-button:focus {
+  background-color: var(--Red-500);
+  color: var(--Neutral0);
+  border: 1px solid var(--Red-500);
+}
+
+/* Dark mode */
+.bg-dark {
+  background-color: var(--Neutral800);
+  transition: 0.4s;
+}
+.bar-dark {
+  background-color: var(--Neutral800);
+}
+button.bg-dark:hover {
+  background-color: var(--Neutral600);
+  cursor: pointer;
+}
+/* Light mode */
+
+.bg-light {
+  background-color: var(--Neutral200);
+  transition: 0.4s;
+}
+.bg-light:hover {
+  background-color: var(--Neutral300);
+  cursor: pointer;
+}
+.bar-light {
+  background-color: var(--Neutral200);
+}
+.light-text {
+  color: var(--Neutral800);
+}
