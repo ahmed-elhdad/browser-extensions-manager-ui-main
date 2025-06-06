@@ -12,7 +12,7 @@
   --Red-500: #f25c54;
   --Red-700: #f25c54;
 
-  --Light-Gadient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --Light-Gadient: linear-gradient(0deg, #ebf2fc 0%, #eef8f9 100%);
   --Dark-Gadient: linear-gradient(180deg, #040918 100%, #09153e 0%);
 }
 
@@ -74,13 +74,16 @@ input:checked + .slider:before {
   transition: all 0.3s ease-in-out;
   border: 0.5px solid var(--Neutral300);
 }
-.extention:hover {
+.extention.bg-dark:hover {
   background-color: var(--Neutral700) !important;
+}
+.extention.bg-dark:hover,
+.extention.bg-light:hover {
   transform: scale(1.3);
 }
 
 body {
-  height: 100vh;
+  height: 100vw;
 }
 div#root {
   display: flex;
@@ -96,9 +99,9 @@ h1 {
   border: 1px solid var(--Neutral600);
 }
 .active {
-  border: 2px solid var(--Red-500);
-  background-color: var(--Red-500);
-  color: var(--Neutral900);
+  border: 2px solid var(--Red-500) !important;
+  background-color: var(--Red-500) !important;
+  color: var(--Neutral900) !important;
 }
 .bg-orange {
   background-color: var(--Red-500);
@@ -108,6 +111,7 @@ h1 {
 }
 .filter-button {
   width: auto;
+  font-weight: 500;
 }
 .white-text {
   color: var(--Neutral100);
@@ -119,11 +123,21 @@ h1 {
   color: var(--Neutral0);
   border: 1px solid var(--Red-500);
 }
-
+.load-container {
+  width: auto;
+  height: auto;
+}
+.load-spinner{
+  width: 100px;
+  background-color: var(--Neutral200);
+}
 /* Dark mode */
 .bg-dark {
   background-color: var(--Neutral800);
   transition: 0.4s;
+}
+body.bg-dark {
+  background-color: var(--Neutral900);
 }
 .bar-dark {
   background-color: var(--Neutral800);
@@ -132,19 +146,40 @@ button.bg-dark:hover {
   background-color: var(--Neutral600);
   cursor: pointer;
 }
+.dark-text {
+  color: var(--Neutral0);
+}
 /* Light mode */
 
-.bg-light {
-  background-color: var(--Neutral200);
-  transition: 0.4s;
+.filter-button.bg-light {
+  background-color: var(--Neutral0);
+  color: var(--Neutral900);
+  border: 0.5px solid var(--Neutral300);
 }
-.bg-light:hover {
+.filter-button.bg-light:hover {
+  background-color: var(--Neutral100);
+}
+.extention.bg-light {
+  background-color: var(--Neutral200);
+  border: 0.5px solid var(--Neutral300);
+}
+.extention.bg-light h3 {
+  color: var(--Neutral900);
+}
+body.bg-light {
+  background-image: var(--Light-Gadient);
+}
+
+button.bg-light:hover {
   background-color: var(--Neutral300);
   cursor: pointer;
 }
-.bar-light {
-  background-color: var(--Neutral200);
+.bar.bg-light {
+  background-color: var(--Neutral0);
 }
 .light-text {
   color: var(--Neutral800);
+}
+.red-text {
+  color: red !important;
 }
